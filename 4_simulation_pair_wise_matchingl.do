@@ -3,7 +3,7 @@ cd "G:\Epidata Share\9) Tali Analyses\THESIS\propensity_scores\simulation study"
 
 file open output using "4_output_sim_matched_pairwise.csv", write replace
 file write output ", exp=1, exp=2, confounder 1, confounder 2, confounder 3"
-global numsims=1000
+global numsims=10000
 forvalues x = 1/$numsims {
 clear
 set obs 10000

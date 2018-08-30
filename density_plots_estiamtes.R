@@ -12,17 +12,16 @@ mean4<-mean(data4$exp.1)
 mean5<-mean(data5$exp.1)
 
 
-
-plot(density(data2$exp.1),col="cyan" , lty=1,ylim=c(0,3.5), main="Distribution of Hazards Ratios, exp=2")
-
- abline(v=mean2, col="cyan")
-lines(density(data3$exp.1), col="purple", lty=1)
-abline(v=mean3, col="purple", lty=1)
-lines(density(data4$exp.1), col="green", lty=1)
-abline(v=mean4, col="green", lty=1)
-legend("topright", c("weights","adjusting","matched", "truth"), col=c( "cyan", "purple", "green","black"), lty=c(1,1,1,2))
-abline(v=1.5, lty=2)
-
+pdf("density_plot_exposure1.pdf")
+plot(density(log(data2$exp.1)),col="cyan" , lty=1,ylim=c(0,5), main="Distribution of Hazards Ratios, exp=2")
+ abline(v=log(mean2), col="cyan")
+lines(density(log(data3$exp.1)), col="purple", lty=1)
+abline(v=log(mean3), col="purple", lty=1)
+lines(density(log(data4$exp.1)), col="green", lty=2)
+abline(v=log(mean4), col="green", lty=2)
+legend("topright", c("weights","adjusting","matched", "truth"), col=c( "cyan", "purple", "green","black"), lty=c(1,1,2,2))
+abline(v=log(1.5), lty=2)
+dev.off()
 
 
 
@@ -33,13 +32,13 @@ mean4<-mean(data4$exp.2)
 
 
 
-plot(density(data2$exp.2),col="cyan" , lty=1,ylim=c(0,3.5), main="Distribution of Hazards Ratios, exp=1")
-
-abline(v=mean2, col="cyan")
-lines(density(data3$exp.2), col="purple", lty=1)
-abline(v=mean3, col="purple", lty=1)
-lines(density(data4$exp.2), col="green", lty=1)
-abline(v=mean4, col="green", lty=1)
-legend("topright", c("weights","adjusting","matched", "truth"), col=c( "cyan", "purple", "green","black"), lty=c(1,1,1,2))
-abline(v=1.5, lty=2)
-
+pdf("density_plot_exposure2.pdf")
+plot(density(log(data2$exp.2)),col="cyan" , lty=1,ylim=c(0,5), main="Distribution of Hazards Ratios, exp=2")
+abline(v=log(mean2), col="cyan")
+lines(density(log(data3$exp.2)), col="purple", lty=1)
+abline(v=log(mean3), col="purple", lty=1)
+lines(density(log(data4$exp.2)), col="green", lty=2)
+abline(v=log(mean4), col="green", lty=2)
+legend("topright", c("weights","adjusting","matched", "truth"), col=c( "cyan", "purple", "green","black"), lty=c(1,1,2,2))
+abline(v=log(1.5), lty=2)
+dev.off()
