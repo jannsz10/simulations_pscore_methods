@@ -15,7 +15,7 @@ In each do file, a cox model is run to obtain estimated coefficients for each of
 
  - *2_weighted_yoshida.do* - the weighting method described in this paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5378668/pdf/nihms845429.pdf 
  - *3_simulation_control_in_model.do* - adjusting for all 3 confounders
- - *4_simulation_pair_wise_matchingl.do* - separate models are run to compare exposure group 1 vs controls, exposure group 2 vs controls. Exposure ropensity scores are estimated using logistic regression with the dependent variables as confounder 1-3. Exposed are matched to unexposed controls 1:2 using nearest neighbour matching without replacement. 
+ - *4_simulation_pair_wise_matchingl.do* - separate models are run to compare exposure group 1 vs controls, exposure group 2 vs controls. Exposure propensity scores are estimated using logistic regression with the dependent variables as confounder 1-3. Exposed are matched to unexposed controls 1:2 using nearest neighbour matching without replacement. 
  - *5_simulation_pair_wise_andcontrol* - same as previous, except confounders are also controlled for in Cox model. 
 
 # Plotting results
